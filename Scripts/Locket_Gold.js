@@ -14,7 +14,7 @@ var locket02 = {
         expires_date: "2099-12-18T01:04:17Z",
         grace_period_expires_date: null,
         unsubscribe_detected_at: null,
-        original_purchase_date: "2026-10-12T01:04:18Z",
+        original_purchase_date: "CSLDEV",
         purchase_date: "2026-10-12T01:04:17Z",
         store: "app_store"
     },
