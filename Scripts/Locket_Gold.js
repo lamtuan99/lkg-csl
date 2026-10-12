@@ -1,3 +1,15 @@
+
+// #        /\_/\                              CSLDEV
+// #       ( o.o )                 Locket Gold (FREE) - Anti-Revoke
+// #        > ^ <                 
+// #      /|  |  |\
+// #     //|  |  |\\
+// #    // |  |  | \\
+// #   ||  |  |  |  ||
+// #   ||  .,.,.,.  ||
+// #    \\________//
+// #     \/______\/
+
 const mapping = {
     '%E8%BD%A6%E7%A5%A8%E7%A5%A8': ['vip+watch_vip'],
     'Locket': ['Gold']
@@ -31,4 +43,4 @@ if (match) {
 } else obj.subscriber.subscriptions["com.locket02.premium.yearly"] = locket02, obj.subscriber.entitlements.pro = locket01;
 $done({
     body: JSON.stringify(obj)
-});
+}); 
