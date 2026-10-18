@@ -59,8 +59,8 @@ if (ua.includes("Locket")) {
             title: "Lên Locket Gold rồi đó 😎",
             feature_set: [
                 {
-                    title: "Nhớ follow kênh tiktok @duyvinh.09 ✨",
-                    body: "Một follow của bạn, một niềm vui của mình 💛",
+                    title: "CSLDEV - Locket Gold ✨",
+                    body: "Cảm Ơn Bạn Đã Sử Dụng💛",
                     imageURL: "https://i.ibb.co/bj2Y3d0y/L-n-Gold-R-i-1.png"
                 }
             ],
@@ -73,8 +73,8 @@ if (ua.includes("Locket")) {
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
-        settings_instagram_url: "https://www.instagram.com/dvinh.09/",
-        settings_tiktok_url: "https://tiktok.com/@duyvinh.09"
+        settings_instagram_url: "https://www.facebook.com/csl0909/",
+        settings_tiktok_url: "https://tiktok.com/@lamtuan0909"
     });
 
     // ============================================================
@@ -269,7 +269,7 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "midautumn_2026",
-            url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
+            url: "https://i.ibb.co/3yryBvdc/CSL-Border.png",
             // url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
             // url: "https://i.ibb.co/JjLZ3cvD/khung-ins.png",
             use_local_time_zone: true,
