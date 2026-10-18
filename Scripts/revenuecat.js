@@ -1,44 +1,77 @@
-// ========= ID ========= //
-const mapping = {
-  'Locket': ['Gold']
-};
-// =========   Phần cố định  ========= // 
-// =========  @csldev ========= // 
-var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
-  obj = JSON.parse($response.body);
-obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
-var csldev = {
-      auto_resume_date: null,
-      display_name: "locket_1600_1y",
-      is_sandbox: true,
-      ownership_type: "PURCHASED",
-      billing_issues_detected_at: null,
-      management_url: "https://apps.apple.com/account/subscriptions",
-      period_type: "normal",
-      price: {
-          "amount": 399000.0,
-          "currency": "VND"
-      },
-      expires_date: "9999-01-09T10:10:14Z",
-      grace_period_expires_date: null,
-      refunded_at: null,
-      unsubscribe_detected_at: null,
-      original_purchase_date: "2005-01-09T10:10:15Z",
-      purchase_date: "2005-01-09T10:10:14Z",
-      store: "app_store",
-      store_transaction_id: "2000001108724193",
-  },
-  locketGold = {
-      grace_period_expires_date: null,
-      purchase_date: "2005-01-09T10:10:14Z",
-      product_identifier: "locket_1600_1y",
-      expires_date: "9999-01-09T10:10:14Z"
-  };
-const match = Object.keys(mapping).find(e => ua.includes(e));
-if (match) {
-  let [e, s] = mapping[match];
-  s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = csldev) : obj.subscriber.subscriptions["locket_1600_1y"] = csldev, obj.subscriber.entitlements[e] = locketGold
-} else obj.subscriber.subscriptions["locket_1600_1y"] = csldev, obj.subscriber.entitlements.pro = locketGold;
-$done({
-  body: JSON.stringify(obj)
+var request = $request;
+// #        /\_/\                              CSLDEV
+// #       ( o.o )                 Locket Gold (FREE) - Anti-Revoke
+// #        > ^ <                 
+// #      /|  |  |\
+// #     //|  |  |\\
+// #    // |  |  | \\
+// #   ||  |  |  |  ||
+// #   ||  .,.,.,.  ||
+// #    \\________//
+// #     \/______\/
+
+const options = {
+    url: "https://api.revenuecat.com/v1/product_entitlement_mapping",
+    headers: {
+     'Authorization' : request.headers["authorization"],
+     'X-Platform' : 'iOS' ,
+     'User-Agent' : request.headers["user-agent"]
+    }
+}
+
+$httpClient.get(options, function(error, newResponse, data){
+  
+const ent = JSON.parse(data);
+
+let jsonToUpdate = {
+        "request_date_ms": 1704070861000,
+        "request_date": "2024-04-12T01:01:01Z",
+        "subscriber": {
+            "entitlement": {},
+            "first_seen": "2024-04-12T01:01:01Z",
+            "original_application_version": "9692",
+            "last_seen": "2024-04-12T01:01:01Z",
+            "other_purchases": {},
+            "management_url": null,
+            "subscriptions": {},
+            "entitlements": {},
+            "original_purchase_date": "2024-04-12T01:01:01Z",
+            "original_app_user_id": "70B24288-83C4-4035-B001-573285B21AE2",
+            "non_subscriptions": {}
+        }
+    };
+
+const productEntitlementMapping = ent.product_entitlement_mapping
+
+for (const [entitlementId, productInfo] of Object.entries(productEntitlementMapping)) {
+  const productIdentifier = productInfo.product_identifier;
+  const entitlements = productInfo.entitlements;
+
+
+  for (const entitlement of entitlements) {
+    jsonToUpdate.subscriber.entitlements[entitlement] = {
+      "purchase_date": "2024-04-12T01:01:01Z",
+      "original_purchase_date": "2024-04-12T01:01:01Z",
+      "expires_date": "9692-01-01T01:01:01Z",
+      "is_sandbox" : false,
+      "ownership_type": "PURCHASED",
+      "store": "app_store",
+      "product_identifier": productIdentifier
+    };
+
+    // Add product identifier to subscriptions
+    jsonToUpdate.subscriber.subscriptions[productIdentifier] = {
+      "expires_date": "9692-01-01T01:01:01Z",
+      "original_purchase_date": "2024-04-12T01:01:01Z",
+      "purchase_date": "2024-04-12T01:01:01Z",
+      "is_sandbox" : false,
+      "ownership_type": "PURCHASED",
+      "store": "app_store"
+    };
+  }
+}
+
+body = JSON.stringify(jsonToUpdate);
+$done({body});
+
 });

@@ -406,7 +406,7 @@ if (ua.includes("Locket")) {
             {
                 section: "🎨 Decorative by Lam Tuan",
                 items: [
-                    { overlay_id: "caption:CSLDEV", source: "remote", caption: { background: { image: { type: "image", data: "https://public.locketcamera.com/locket-public/gold_promos/gold_promo_theme.png", source: "url" }, colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] }, icon: { data: "person.fill", type: "sf_symbol", color: "#183153" }, max_lines: 1, text: "CSLDEV", text_color: "#183153", type: "static_content" } },
+                    { overlay_id: "caption:CSLDEV", source: "remote", caption: { background: { image: { type: "image", data: "https://i.ibb.co/nNp0ZKnm/Chat-GPT-Image-02-35-56-9-thg-7-2026.png", source: "url" }, colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] }, icon: { data: "person.fill", type: "sf_symbol", color: "#183153" }, max_lines: 1, text: "Decorative by Lam Tuan", text_color: "#183153", type: "static_content" } },
                     { overlay_id: "caption:cu", source: "remote", caption: { background: { colors: ["#FFD6A5", "#FFF1A8", "#FFC4D6"] }, max_lines: 1, text: "Cu 🐎", text_color: "#633B24", type: "static_content" } },
                     { overlay_id: "caption:tuat", source: "remote", caption: { background: { colors: ["#2C1A0E", "#5D4037", "#D7A86E"] }, icon: { data: "🐕", type: "emoji" }, max_lines: 1, text: "Tuất", text_color: "#FFFFFFE6", type: "static_content" } },
                     { overlay_id: "caption:snake_vibes", source: "remote", caption: { background: { colors: ["#2E7D32", "#66BB6A"] }, icon: { data: "🐍", type: "emoji" }, max_lines: 1, text: "Snake Vibes", localized_text: { en: "Snake Vibes", vn: "Chất rắn" }, text_color: "#FFFFFFE6", type: "static_content" } },
