@@ -8,20 +8,14 @@
 
 ## 📂 Cấu trúc thư mục
 
-- **Scripts/** – Chứa các script như `Locket_Gold.js`
-- **Module/** – Các mô-đun mở rộng hoặc hỗ trợ
+- **Scripts/**
+- **Module/**
 
 ---
 
 ## 🚀 Cách sử dụng
 
-```bash
 # Clone repo
 git clone https://github.com/lamtuan99/lkg-csl.git
 cd lkg-csl
 
-# Cài đặt gói nếu cần
-npm install
-
-# # Chạy script chính (ví dụ)
-# node Scripts/Speed_Test_Master.js
